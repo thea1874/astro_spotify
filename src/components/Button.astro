@@ -33,6 +33,12 @@ const { variant = "primary", size = "medium" } = Astro.props;
     padding-inline: var(--space-xs) var(--space-xl);
   }
 
+  [data-variant="knap4"] {
+    background: var(--surface-white);
+    color: var(--text-black);
+    padding-inline: var(--space-xs)
+  }
+
   /* Sizes */
   [data-size="medium"] {
     font-size: var(--font-size-base);
@@ -43,6 +49,13 @@ const { variant = "primary", size = "medium" } = Astro.props;
   [data-size="small"] {
     font-size: var(--font-size-small);
     min-height: var(--space-xl);
+    padding-block: var(--space-xxxs);
+    padding-inline: var(--space-md);
+  }
+
+  [data-size="large"] {
+    font-size: var(--font-size-base);
+    min-height: var(--space-xxxl);
     padding-block: var(--space-xxxs);
     padding-inline: var(--space-md);
   }

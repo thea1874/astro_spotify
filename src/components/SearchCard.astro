@@ -1,0 +1,70 @@
+---
+const { title, body, imgPath } = Astro.props;
+---
+
+<li>
+  <article>
+    <h3>
+        <a href="#0">{title}</a>
+    </h3>
+  
+    <figure>
+      <img src={imgPath} alt="" height="350" width="350" />
+    </figure>
+    <p>{body}</p>
+  </article>
+</li>
+
+<style>
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-ms);
+    padding-left: 0%;
+    border-radius: var(--border-radius-medium);
+    transition: background 0.3s ease;
+  }
+
+
+
+  h3 {
+    margin-bottom: var(--space-xxxs);
+  }
+
+  h3 a {
+    color: inherit;
+  }
+
+  a::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+  }
+
+  figure {
+    display: grid;
+    grid: "stack";
+    place-items: start;
+    order: -1;
+    margin-bottom: var(--space-md);
+    color: var(--text-white);
+  }
+
+  figure > * {
+    grid-area: stack;
+  }
+
+  img {
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-default);
+  }
+
+
+  svg {
+    width: var(--space-sm);
+    height: var(--space-sm);
+    margin: var(--space-xxs);
+    display: block;
+  }
+</style>
